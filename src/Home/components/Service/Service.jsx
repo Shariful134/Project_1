@@ -1,5 +1,6 @@
 import { useDebugValue, useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
+import axios from "axios";
 
 const Service = () => {
   const [services, setServices] = useState([]);
@@ -22,7 +23,7 @@ const Service = () => {
       </div>
       <div className="container mx-auto grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <ServiceCard service={service}></ServiceCard>
+          <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}
       </div>
     </div>
